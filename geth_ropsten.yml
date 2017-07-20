@@ -3,7 +3,8 @@
   become: yes
   become_method: sudo
   tasks:
-    - include: geth_base.yml
+    - name: include geth_base
+      include: geth_base.yml
 
     - name: include geth vars
       include_vars: 
