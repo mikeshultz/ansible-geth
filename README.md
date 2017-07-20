@@ -10,4 +10,4 @@ Clone the role into your geth configuration.
 
 ## Configure
 
-Add machines to the role `get` for main net, or `geth_ropsten` for ropsten.  You can have nodes in both roles.
+Add machines to the role `geth` for main net, or `geth_ropsten` for ropsten.  You can have nodes in both roles.
