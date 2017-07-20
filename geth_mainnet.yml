@@ -1,0 +1,34 @@
+---
+- hosts: geth
+  become: yes
+  become_method: sudo
+  tasks:
+    -include: geth-base.yml
+    
+    - name: create geth directory
+      file:
+        state: directory
+        path: "{{ mainnet_datadir }}"
+        owner: ether
+        group: ether
+        mode: 0755
+
+    - name: symlink chaindata to /data
+      file:
+        state: link
+        path: /home/{{ geth_user }}/.ethereum/geth
+        src: "{{ mainnet_datadir }}"
+
+    - name: install service file
+      template:
+        src: templates/geth.service
+        dest: /etc/systemd/system/multi-user.target.wants/geth.service
+        owner: root
+        group: root
+        mode: 0644
+
+    - name: reload systemd
+      shell: systemctl daemon-reload
+
+    - name: ensure geth service started
+      shell: systemctl start geth

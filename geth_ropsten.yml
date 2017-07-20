@@ -1,0 +1,38 @@
+---
+- hosts: geth_ropsten
+  become: yes
+  become_method: sudo
+  tasks:
+    - include: geth_base.yml
+
+    - name: include geth vars
+      include_vars: 
+        file: vars/geth.yml
+
+    - name: create geth directory
+      file:
+        state: directory
+        path: "{{ ropsten_datadir }}"
+        owner: ether
+        group: ether
+        mode: 0755
+
+    - name: symlink chaindata to /data
+      file:
+        state: link
+        path: /home/{{ geth_user }}/.ethereum/testnet
+        src: "{{ ropsten_datadir }}"
+
+    - name: install service file
+      template:
+        src: templates/geth-ropsten.service
+        dest: /etc/systemd/system/multi-user.target.wants/geth-ropsten.service
+        owner: root
+        group: root
+        mode: 0644
+
+    - name: reload systemd
+      shell: systemctl daemon-reload
+
+    - name: ensure geth service started
+      shell: systemctl start geth-ropsten
