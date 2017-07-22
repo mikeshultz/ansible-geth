@@ -47,4 +47,4 @@
 
     - name: if no account, create one
       shell: "geth account create --datadir {{ ropsten_datadir }} --password {{ geth_etherbase_password }}"
-      when: geth_etherbase_password is defined and account_check.stdout == 1
+      when: ropsten_etherbase_password is defined and account_check.stdout == 1
