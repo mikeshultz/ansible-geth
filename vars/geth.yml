@@ -4,5 +4,17 @@ geth_user: ether
 geth_build: geth-linux-amd64-1.6.7-ab5646c5
 geth_checksum: md5:d5331a9ba124778d6d1341baba56ef11
 geth_cache: 512
+# Main net options
+mainnet_port: 30303
 mainnet_datadir: /data/mainnet
+mainnet_rpc: true
+mainnet_rpcaddr: 127.0.0.1
+mainnet_rpcport: 8545
+mainnet_rpcapi: "eth,net,web3"
+# Ropsten options
+ropsten_port: 30304
 ropsten_datadir: /data/ropsten
+ropsten_rpc: true
+ropsten_rpcaddr: 127.0.0.1
+ropsten_rpcport: 8080
+ropsten_rpcapi: "eth,net,web3"
