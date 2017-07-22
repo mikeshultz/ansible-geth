@@ -35,3 +35,12 @@
       service: 
         name: geth
         state: restarted
+
+    # Checks for an account.  1 for no accounts, 0 for accounts found
+    - name: check for an account
+      shell: geth account list 2>&1 | grep "No etherbase" | wc -l
+      register: account_check
+
+    - name: if no account, create one
+      shell: "geth account create --datadir {{ ropsten_datadir }} --password {{ geth_etherbase_password }}"
+      when: geth_etherbase_password is defined and account_check.stdout == 1
