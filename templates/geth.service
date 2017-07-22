@@ -5,7 +5,7 @@ Requires=network.target
 [Service]
 Type=simple
 User={{ geth_user }}
-ExecStart=/home/{{ geth_user }}/.local/bin/geth --datadir "{{ mainnet_datadir }}" --cache {{ geth_cache }} --syncmode "fast"{% if mainnet_port is defined %} --port {{ mainnet_port }}(% endif %}{% if mainnet_rpc is defined and mainnet_rpc == true %} --rpc --rpcaddr {{ mainnet_rpcaddr }} --rpcport {{ mainnet_rpcport }} --rpcapi {{ mainnet_rpcapi }}{% endif %}
+ExecStart=/home/{{ geth_user }}/.local/bin/geth --datadir "{{ mainnet_datadir }}" --cache {{ geth_cache }} --syncmode "fast"{% if mainnet_port is defined %} --port {{ mainnet_port }}(% endif %} {% if mainnet_rpc is defined and mainnet_rpc == true %} --rpc --rpcaddr {{ mainnet_rpcaddr }} --rpcport {{ mainnet_rpcport }} --rpcapi {{ mainnet_rpcapi }}{% endif %}
 Restart=on-failure
 
 [Install]
