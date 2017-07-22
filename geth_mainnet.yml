@@ -32,4 +32,6 @@
       shell: systemctl daemon-reload
 
     - name: ensure geth service started
-      shell: systemctl start geth
+      service: 
+        name: geth
+        state: restarted
