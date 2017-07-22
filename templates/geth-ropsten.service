@@ -5,7 +5,7 @@ Requires=network.target
 [Service]
 Type=simple
 User={{ geth_user }}
-ExecStart=/home/{{ geth_user }}/.local/bin/geth --testnet --datadir "{{ ropsten_datadir }}" --cache {{ geth_cache }} --syncmode "fast"{% if ropsten_port %} --port {{ ropsten_port }}(% endif %}{% if ropsten_rpc %} --rpc --rpcaddr {{ ropsten_rpcaddr }} --rpcport {{ ropsten_rpcport }} --rpcapi {{ ropsten_rpcapi }}{% endif %}
+ExecStart=/home/{{ geth_user }}/.local/bin/geth --testnet --datadir "{{ ropsten_datadir }}" --cache {{ geth_cache }} --syncmode "fast"{% if ropsten_port is defined %} --port {{ ropsten_port }}(% endif %}{% if ropsten_rpc is defined and ropsten_rpc == true %} --rpc --rpcaddr {{ ropsten_rpcaddr }} --rpcport {{ ropsten_rpcport }} --rpcapi {{ ropsten_rpcapi }}{% endif %}
 Restart=on-failure
 
 [Install]
