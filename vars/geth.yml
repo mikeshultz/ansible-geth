@@ -7,6 +7,7 @@ geth_checksum: md5:d5331a9ba124778d6d1341baba56ef11
 # performance options
 geth_cache: 512
 # net options
+geth_networkid: 1
 geth_port: 30303
 geth_datadir: /data/mainnet
 geth_rpc: true
