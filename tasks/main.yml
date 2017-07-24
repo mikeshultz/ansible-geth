@@ -1,8 +1,4 @@
 ---
-- name: include geth vars
-  include_vars: 
-    file: defaults/geth.yml
-
 - name: add ether user
   user:
     name: "{{ geth_user }}"
