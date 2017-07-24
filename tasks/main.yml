@@ -110,6 +110,6 @@
   firewalld:
     state: enabled
     zone: public
-    port: "{{ geth_rpcport }}"
+    port: "{{ geth_rpcport }}/tcp"
     permanent: true
   when: geth_rpcport is defined and geth_rpcpublic == true and firewall_state.stdout == 'running'
