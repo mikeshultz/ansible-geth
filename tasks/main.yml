@@ -46,12 +46,8 @@
     group: "{{ geth_user }}"
     state: directory
 
-- name: ensure geth mainnet service stopped before copy
+- name: ensure geth service stopped before copy
   shell: "[[ -e /etc/systemd/system/multi-user.target.wants/geth.service ]] && systemctl stop geth"
-  ignore_errors: yes
-
-- name: ensure geth ropsten service stopped before copy
-  shell: "[[ -e /etc/systemd/system/multi-user.target.wants/geth-ropsten.service ]] && systemctl stop geth-ropsten"
   ignore_errors: yes
 
 - name: put geth executable in ~/.local/bin
@@ -111,7 +107,7 @@
   register: account_check
 
 - name: if no account, create one
-  shell: "geth account create --datadir {{ ropsten_datadir }} --password {{ geth_etherbase_password }}"
+  shell: "geth account create --datadir {{ geth_datadir }} --password {{ geth_etherbase_password }}"
   when: geth_etherbase_password is defined and account_check.stdout == 1
 
 - name: ensure RPC access allowed
