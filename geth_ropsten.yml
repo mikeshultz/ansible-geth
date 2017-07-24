@@ -49,11 +49,6 @@
       shell: "geth account create --datadir {{ ropsten_datadir }} --password {{ geth_etherbase_password }}"
       when: ropsten_etherbase_password is defined and account_check.stdout == 1
 
-    - name: check firewalld availability
-      shell: firewall-cmd --state
-      register: firewall_state
-      ignore_errors: true
-
     - name: ensure RPC access allowed
       firewalld:
         state: enabled
