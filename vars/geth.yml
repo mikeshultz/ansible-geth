@@ -1,24 +1,17 @@
 ---
 # The user that will run geth
 geth_user: ether
+# Build to be installed (see: https://geth.ethereum.org/downloads/)
 geth_build: geth-linux-amd64-1.6.7-ab5646c5
 geth_checksum: md5:d5331a9ba124778d6d1341baba56ef11
+# performance options
 geth_cache: 512
-# Main net options
-mainnet_port: 30303
-mainnet_datadir: /data/mainnet
-mainnet_rpc: true
-mainnet_rpcpublic: false
-mainnet_rpcaddr: 127.0.0.1
-mainnet_rpcport: 8545
-mainnet_rpcapi: "eth,net,web3"
-mainnet_rpccorsdomain: localhost
-# Ropsten options
-ropsten_port: 30304
-ropsten_datadir: /data/ropsten
-ropsten_rpc: true
-rospten_rpcpublic: false
-ropsten_rpcaddr: 127.0.0.1
-ropsten_rpcport: 8080
-ropsten_rpcapi: "eth,net,web3"
-ropsten_rpccorsdomain: localhost
+# net options
+geth_port: 30303
+geth_datadir: /data/mainnet
+geth_rpc: true
+geth_rpcpublic: false
+geth_rpcaddr: 127.0.0.1
+geth_rpcport: 8545
+geth_rpcapi: "eth,net,web3"
+geth_rpccorsdomain: localhost
