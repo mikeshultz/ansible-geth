@@ -8,6 +8,27 @@ Clone the role into your geth configuration.
 
     git clone https://github.com/mikeshultz/ansible-geth.git /etc/ansible/roles/geth
 
+Create a role for your machine that inherits from this one to change the default
+options.
+
+    ---
+    - hosts: ropsten
+      become: yes
+      become_method: sudo
+      vars:
+        geth_networkid: 3
+        geth_cache: 512
+        geth_port: 30304
+        geth_datadir: /data/mainnet
+        geth_rpc: true
+        geth_rpcpublic: true
+        geth_rpcaddr: 0.0.0.0
+        geth_rpcport: 8080
+        geth_rpcapi: "eth,net,web3"
+        geth_rpccorsdomain: "*"
+      roles:
+        - geth
+
 ## Configure
 
 Add machines to the role `geth` for main net, or `geth_ropsten` for ropsten.  You can have nodes in both roles.
