@@ -19,7 +19,7 @@ options.
         geth_networkid: 3
         geth_cache: 512
         geth_port: 30304
-        geth_datadir: /data/mainnet
+        geth_datadir: /data/ropsten
         geth_rpc: true
         geth_rpcpublic: true
         geth_rpcaddr: 0.0.0.0
