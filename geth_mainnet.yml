@@ -44,3 +44,11 @@
     - name: if no account, create one
       shell: "geth account create --datadir {{ ropsten_datadir }} --password {{ geth_etherbase_password }}"
       when: mainnet_etherbase_password is defined and account_check.stdout == 1
+
+    - name: ensure RPC access allowed
+      firewalld:
+        state: enabled
+        zone: public
+        port: "{{ mainnet_rpcport }}"
+        permanent: true
+      when: mainnet_rpcport is defined and mainnet_rpcpublic == true and firewall_state.stdout == 'running'

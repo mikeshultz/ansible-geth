@@ -48,3 +48,16 @@
     - name: if no account, create one
       shell: "geth account create --datadir {{ ropsten_datadir }} --password {{ geth_etherbase_password }}"
       when: ropsten_etherbase_password is defined and account_check.stdout == 1
+
+    - name: check firewalld availability
+      shell: firewall-cmd --state
+      register: firewall_state
+      ignore_errors: true
+
+    - name: ensure RPC access allowed
+      firewalld:
+        state: enabled
+        zone: public
+        port: "{{ ropsten_rpcport }}"
+        permanent: true
+      when: ropsten_rpcport is defined and ropsten_rpcpublic == true and firewall_state.stdout == 'running'

@@ -69,3 +69,8 @@
     owner: ether
     group: ether
     mode: 0750
+
+- name: check firewalld availability
+  shell: firewall-cmd --state
+  register: firewall_state
+  ignore_errors: true

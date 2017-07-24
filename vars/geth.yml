@@ -8,6 +8,7 @@ geth_cache: 512
 mainnet_port: 30303
 mainnet_datadir: /data/mainnet
 mainnet_rpc: true
+mainnet_rpcpublic: false
 mainnet_rpcaddr: 127.0.0.1
 mainnet_rpcport: 8545
 mainnet_rpcapi: "eth,net,web3"
@@ -15,6 +16,7 @@ mainnet_rpcapi: "eth,net,web3"
 ropsten_port: 30304
 ropsten_datadir: /data/ropsten
 ropsten_rpc: true
+rospten_rpcpublic: false
 ropsten_rpcaddr: 127.0.0.1
 ropsten_rpcport: 8080
 ropsten_rpcapi: "eth,net,web3"
