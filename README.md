@@ -16,7 +16,7 @@ options.
       become: yes
       become_method: sudo
       vars:
-        geth_networkid: 3
+        geth_testnet: true
         geth_cache: 512
         geth_port: 30304
         geth_datadir: /data/ropsten
