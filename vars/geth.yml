@@ -12,6 +12,7 @@ mainnet_rpcpublic: false
 mainnet_rpcaddr: 127.0.0.1
 mainnet_rpcport: 8545
 mainnet_rpcapi: "eth,net,web3"
+mainnet_rpccorsdomain: localhost
 # Ropsten options
 ropsten_port: 30304
 ropsten_datadir: /data/ropsten
@@ -20,3 +21,4 @@ rospten_rpcpublic: false
 ropsten_rpcaddr: 127.0.0.1
 ropsten_rpcport: 8080
 ropsten_rpcapi: "eth,net,web3"
+ropsten_rpccorsdomain: localhost
