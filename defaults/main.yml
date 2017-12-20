@@ -2,8 +2,8 @@
 # The user that will run geth
 geth_user: ether
 # Build to be installed (see: https://geth.ethereum.org/downloads/)
-geth_build: geth-linux-amd64-1.7.2-1db4ecdc
-geth_checksum: md5:cc4a666fd21ae3627ee8ae974650b2f7
+geth_build: geth-linux-amd64-1.7.3-4bb3c89d
+geth_checksum: md5:66e1fa9514b410a71273e56a9fe6a5ab
 # performance options
 geth_cache: 512
 # net options
