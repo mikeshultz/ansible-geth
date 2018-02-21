@@ -16,3 +16,4 @@ geth_rpcaddr: 127.0.0.1
 geth_rpcport: 8545
 geth_rpcapi: "eth,net,web3"
 geth_rpccorsdomain: localhost
+geth_rpcvhosts: localhost
