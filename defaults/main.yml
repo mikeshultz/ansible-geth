@@ -10,6 +10,8 @@ geth_cache: 512
 geth_networkid: 1
 geth_port: 30303
 geth_datadir: /data/mainnet
+geth_maxpeers: 25
+geth_maxpendpeers: 0
 geth_rpc: true
 geth_rpcpublic: false
 geth_rpcaddr: 127.0.0.1
