@@ -2,17 +2,20 @@
 # The user that will run geth
 geth_user: ether
 # Build to be installed (see: https://geth.ethereum.org/downloads/)
-geth_build: geth-linux-amd64-1.7.3-4bb3c89d
-geth_checksum: md5:66e1fa9514b410a71273e56a9fe6a5ab
+geth_build: geth-linux-amd64-1.8.2-b8b9f7f4
+geth_checksum: md5:46a76e77fc9ae4dc9f8d1cf50f3b5798
 # performance options
 geth_cache: 512
 # net options
 geth_networkid: 1
 geth_port: 30303
 geth_datadir: /data/mainnet
+geth_maxpeers: 25
+geth_maxpendpeers: 0
 geth_rpc: true
 geth_rpcpublic: false
 geth_rpcaddr: 127.0.0.1
 geth_rpcport: 8545
 geth_rpcapi: "eth,net,web3"
 geth_rpccorsdomain: localhost
+geth_rpcvhosts: localhost
