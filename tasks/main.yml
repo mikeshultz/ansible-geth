@@ -43,7 +43,7 @@
     state: directory
 
 - name: ensure geth service stopped before copy
-  shell: "[[ -e /etc/systemd/system/multi-user.target.wants/geth.service ]] && systemctl stop geth"
+  shell: "[[ -e /lib/systemd/system/geth.service ]] && systemctl stop geth"
   ignore_errors: yes
 
 - name: put geth executable in ~/.local/bin
@@ -84,7 +84,7 @@
 - name: install service file
   template:
     src: ../templates/geth.service
-    dest: /etc/systemd/system/multi-user.target.wants/geth.service
+    dest: /lib/systemd/system/geth.service
     owner: root
     group: root
     mode: 0644
