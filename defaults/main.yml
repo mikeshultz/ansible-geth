@@ -19,7 +19,6 @@ geth_rpcport: 8545
 geth_rpcapi: "eth,net,web3"
 geth_rpccorsdomain: localhost
 geth_rpcvhosts: localhost
-geth_networkid: 1
 geth_nodiscover: false
 geth_script: false
 geth_unlock: false
