@@ -22,3 +22,4 @@ geth_rpcvhosts: localhost
 geth_nodiscover: false
 geth_script: false
 geth_unlock: false
+geth_passwordfile: false
